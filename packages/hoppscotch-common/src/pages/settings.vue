@@ -170,6 +170,7 @@ const interceptorsWithSettings = computed(() =>
 
 const ACCENT_COLOR = useSetting("THEME_COLOR")
 const PROXY_URL = useSetting("PROXY_URL")
+const PROXY_TOKEN = useSetting("PROXY_TOKEN")
 const TELEMETRY_ENABLED = useSetting("TELEMETRY_ENABLED")
 const EXPAND_NAVIGATION = useSetting("EXPAND_NAVIGATION")
 const SIDEBAR_ON_LEFT = useSetting("SIDEBAR_ON_LEFT")
@@ -180,12 +181,14 @@ const confirmRemove = ref(false)
 
 const proxySettings = computed(() => ({
   url: PROXY_URL.value,
+  token: PROXY_TOKEN.value
 }))
 
 watch(
   proxySettings,
-  ({ url }) => {
-    applySetting("PROXY_URL", url)
+  ({ url, token }) => {
+    applySetting("PROXY_URL", url),
+    applySetting("PROXY_TOKEN", token)
   },
   { deep: true }
 )

@@ -30,6 +30,7 @@ export type SettingsDef = {
   syncEnvironments: boolean
 
   PROXY_URL: string
+  PROXY_TOKEN: string
 
   WRAP_LINES: {
     httpRequestBody: boolean

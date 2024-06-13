@@ -28,6 +28,15 @@
       input-styles="input floating-input"
       :disabled="!proxyEnabled"
     />
+    <HoppSmartInput
+      v-model="PROXY_TOKEN"
+      :autofocus="false"
+      styles="flex-1"
+      placeholder=" "
+      :label="t('settings.proxy_token')"
+      input-styles="input floating-input"
+      :disabled="!proxyEnabled"
+    />
     <HoppButtonSecondary
       v-tippy="{ theme: 'tooltip' }"
       :title="t('settings.reset_default')"
@@ -58,6 +67,7 @@ const toast = useToast()
 const interceptorService = useService(InterceptorService)
 
 const PROXY_URL = useSetting("PROXY_URL")
+const PROXY_TOKEN = useSetting("PROXY_TOKEN")
 
 const proxyEnabled = computed({
   get() {

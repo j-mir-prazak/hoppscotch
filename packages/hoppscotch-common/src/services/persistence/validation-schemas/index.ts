@@ -30,6 +30,7 @@ const SettingsDefSchema = z.object({
   syncHistory: z.boolean(),
   syncEnvironments: z.boolean(),
   PROXY_URL: z.string(),
+  PROXY_TOKEN: z.string(),
   CURRENT_INTERCEPTOR_ID: z.string(),
   URL_EXCLUDES: z.object({
     auth: z.boolean(),
